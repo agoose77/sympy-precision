@@ -1,0 +1,4 @@
+#!/bin/bash
+export CONDA_LIB_PATH=$(python -c "import sys;import pathlib as p;print(p.Path(sys.executable).parent.parent / 'lib', end='')")
+export LD_LIBRARY_PATH="$CONDA_LIB_PATH:$LD_LIBRARY_PATH"
+exec "$@"
